@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_benefits_filters",
+  "info": {
+    "name": "filter",
+    "icon": "cogs"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "model": "questions"
+    },
+    "operation": {
+      "type": "enumeration",
+      "enum": [
+        "equal",
+        "greater_than",
+        "less_than",
+        "greater_or_equal",
+        "less_or_equal"
+      ],
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

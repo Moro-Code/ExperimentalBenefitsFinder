@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "benefits",
+  "info": {
+    "name": "Benefits"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "benefit_id": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "benefit_name_en": {
+      "type": "string",
+      "required": true
+    },
+    "benefit_name_fr": {
+      "type": "string",
+      "required": true
+    },
+    "benefit_description_en": {
+      "type": "richtext"
+    },
+    "benefit_description_fr": {
+      "type": "richtext"
+    },
+    "filters": {
+      "type": "dynamiczone",
+      "components": [
+        "benefits.filter"
+      ]
+    },
+    "benefit_card_image_en": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "benefit_card_image_fr": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

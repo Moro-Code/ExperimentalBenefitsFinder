@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "questions",
+  "info": {
+    "name": "Questions"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "question_id": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "question_title_en": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "question_title_fr": {
+      "type": "string",
+      "required": true
+    },
+    "options": {
+      "collection": "options",
+      "via": "question"
+    },
+    "tags": {
+      "collection": "tags",
+      "via": "questions"
+    },
+    "question_type": {
+      "type": "enumeration",
+      "enum": [
+        "number",
+        "radio",
+        "dropdown",
+        "text",
+        "boolean"
+      ]
+    }
+  }
+}

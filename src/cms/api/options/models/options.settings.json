@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "options",
+  "info": {
+    "name": "Options"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "option_id": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "option_name_en": {
+      "type": "string",
+      "required": true
+    },
+    "option_name_fr": {
+      "type": "string",
+      "required": true
+    },
+    "question": {
+      "via": "options",
+      "model": "questions"
+    },
+    "option_value": {
+      "type": "string"
+    }
+  }
+}

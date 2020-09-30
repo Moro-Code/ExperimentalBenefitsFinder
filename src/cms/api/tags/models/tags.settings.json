@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "name": "Tags"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "tag": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "questions": {
+      "via": "tags",
+      "collection": "questions",
+      "dominant": true
+    }
+  }
+}
